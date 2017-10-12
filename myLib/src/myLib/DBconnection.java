@@ -4,17 +4,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class DBconnection {
 
 	private String jdbcDriver = "com.mysql.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost:3306/bookDB?useSSL=false&characterEncoding=UTF-8";
-	private String username = "root";
-	private String password = "2218234907";
-	private String url1 = "jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_mylib";
-	private String username1 = "zyyll5kzjm";
-	private String password1 = "kzmhhx2lwy3xhm5wxx5hxm4y12wky0l3yxj5w13w";
 	private String dbusername = System.getenv("ACCESSKEY");
 	private String dbpassword = System.getenv("SECRETKEY");
 	private String dbUrl = String.format("jdbc:mysql://%s:%s/%s", System.getenv("MYSQL_HOST"), System.getenv("MYSQL_PORT"), System.getenv("MYSQL_DB"));

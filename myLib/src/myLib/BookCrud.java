@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -21,10 +20,6 @@ import java.io.OutputStream;
 
 public class BookCrud extends ActionSupport {
 	
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String ISBN;
 	private String Title;
@@ -126,8 +121,6 @@ public class BookCrud extends ActionSupport {
 	public String retrieveByAuthor() throws SQLException {
 		DBconnection conn = new DBconnection();
 		HttpServletRequest request = ServletActionContext.getRequest();
-		//HttpSession session = request.getSession();
-		
 		ArrayList<Map<String, Object>> bl = conn.queryByAuth(getName().trim());
 		if (bl!=null) {
 			request.setAttribute("auName", getName());
